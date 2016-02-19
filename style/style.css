@@ -1,7 +1,6 @@
 body {
 	padding: 0.5em;
 	margin: 0em;
-
 	background-image: url(bg-light.png);
 }
 
@@ -9,7 +8,6 @@ h1 {
 	font-size: 1em;
 	background: black;
 	color: white;
-
 	padding: 15px;
 	margin: 15px;
 
@@ -19,23 +17,157 @@ h1 .version {
 	font-style: italic;
 }
 
-#status, #infos {
+#status, #infos, #directionToTarget {
 	padding: 15px;
-	margin: 15px;
-
+/*	margin: 15px;*/
 	background: white; 
+    width: 80vw;
+    display: block;
+    margin: 15px auto;
+    box-sizing: border-box;
 
 }
 
+/*
 .win {
 	color: green;
 	font-weight: bold;
 	font-size: 1.1em;
 }
+*/
 
 #myMap { 
 
 	border: 10px solid white;
-	margin: 15px;
-	height: 300px; 
+	margin: 15px auto;
+/*	height: 300px; */
+    height: 20vh;
+    width: 80vw;
+    box-sizing: border-box;
+    
+}
+
+/*(temporary)Glitch Style*/
+
+#testZone {
+    width: 80vw;
+    padding: 15px;
+    height: 20vh;
+    text-align: center;
+    margin: 35px auto 0px auto;
+    box-sizing: border-box;
+}
+
+.clearZone { 
+    background: white;
+}
+
+.glitched0 {
+    background: cornflowerblue;
+}
+
+.glitched1 {
+    background: green;
+}
+
+.glitched2 {
+    background: yellow;
+}
+
+.glitched3 {
+    background: orange;
+}
+
+.glitched4 {
+    background: red;
+}
+
+.glitched5 {
+    background: black;
+}
+
+/*Debug zone style*/
+
+.debug {
+    display: box;
+    
+}
+
+.debugHidden {
+    visibility: hidden;/*map doesn't load properly if its container is set to display none*/
+}
+
+#debug {
+    text-align: center;
+}
+
+/*Compass*/
+
+#arrowNorth {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-bottom: 50px solid red;
+    display: inline-block;
+}
+
+#arrowTarget {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-bottom: 50px solid green;
+    display: inline-block;
+}
+
+
+.fauxBorder {
+    /*pas utilisées pour le moment et peut-être jamais en fait... on verra plus tard...*/
+    background: white;
+}
+
+#fauxBorderLeft {
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#fauxBorderRight {
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#fauxBorderUp {
+    height: 20px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+
+
+#fauxBorderDown {
+    height: 20px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.arrow {
+    width: 40%;
+    display: inline-block;
+}
+
+#debugButton {
+    margin: 20px auto;
+    display: block;
 }

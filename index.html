@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Cédric Stempin" />
+
+	<title>Geo Sandbox</title>
+	<link rel="stylesheet" type="text/css" media="all" href="style/style.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<!--	<h1>Geo Sandbox <span class="version">version 3.1</span></h1>-->
+	
+	<div id="testZone" class="clearZone"></div>
+	
+	
+	<div id="debug" class="debugHidden">
+        <div class="arrow">
+            <p>Target is this way:</p>
+            <div id="arrowTarget"></div>
+        </div>
+        
+        <div class="arrow">
+            <p>North is this way:</p>
+            <div id="arrowNorth"></div>
+        </div>
+       <p id="directionToTarget">Direction to target : <span id="boussole">unknown</span></p>
+        <div id="myMap"></div>
+        <p id="infos"></p>
+	    <p id="status"></p>
+	   <button id="moveZone">move target</button>    
+
+
+
+	</div>
+	<button id="debugButton">Debug</button>
+	
+	
+	<script src="js/utils.js"></script>
+	<script src="js/main.js"></script>
+	<div id="fauxBorderUp" class="fauxBorder"></div>
+	<div id="fauxBorderRight" class="fauxBorder"></div>
+	<div id="fauxBorderDown" class="fauxBorder"></div>
+	<div id="fauxBorderLeft" class="fauxBorder"></div>
+</body>
+</html>
