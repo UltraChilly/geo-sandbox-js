@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	    wormholeMarker.bindPopup(wormhole.name);
         wormholeMarker.addTo(map);
         
-        window.moveWormhole = window.setInterval(startMoving, 50);
+        window.moveWormhole = window.setInterval(startMoving, 500);/*50*/
         
         console.log("end moveZone");
         
@@ -181,31 +181,31 @@ document.addEventListener('DOMContentLoaded', function(){
             switch (true) {
                 case (ref>0.6):
                     currentGlitchLevel ="glitched0";
-                    testZone.innerHTML = "Find the source of the interference."
+                    testZone.innerHTML = "<p>Find the source of the interference.</p>"
                     break;
                 case (ref<0.6 && ref>0.5):
                     currentGlitchLevel = "glitched1";
-                    testZone.innerHTML = "Looks like you're on the right track."
+                    testZone.innerHTML = "<p>Looks like you're on the right track.</p>"
                     break;
                 case (ref<0.5 && ref>0.4):
                     currentGlitchLevel = "glitched2";
-                    testZone.innerHTML = "You're getting closer (except if you went back...)"
+                    testZone.innerHTML = "<p>You're getting closer (except if you went back...)</p>"
                     break;
                 case (ref<0.4 && ref>0.3):
                     currentGlitchLevel = "glitched3";
-                    testZone.innerHTML = "I think you figured it out."
+                    testZone.innerHTML = "<p>I think you figured it out.</p>"
                     break;
                 case (ref<0.3 && ref>0.2):
                     currentGlitchLevel = "glitched4";
-                    testZone.innerHTML = "It's big, I can feel it in my circuits."
+                    testZone.innerHTML = "<p>It's big, I can feel it in my circuits.</p>"
                     break;
                 case (ref<0.2):
                     currentGlitchLevel = "glitched5";
-                    testZone.innerHTML = "You found it! aaaand now you're dead... game over."
+                    testZone.innerHTML = "<p>You found it! aaaand now you're dead... game over.</p>"
                     break;
                 default:
                     currentGlitchLevel = "clearZone";  
-                    testZone.innerHTML = "Find the source of the interference... but seriously if you see this it's unlikely you ever will... and it's probably my fault..."
+                    testZone.innerHTML = "<p>Find the source of the interference... but seriously if you see this it's unlikely you ever will... and it's probably my fault...</p>"
             }
             
     }

@@ -14,3 +14,4 @@ To do :
 - replace (or move) original marker instead of adding one in debug (or not?)
 - test on different browsers and modify accordingly
 - refactor all the things! http://cdn.meme.am/instances/400x/62098031.jpg
+- ...and clean the mess I left in the CSS and JS

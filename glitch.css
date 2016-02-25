@@ -1,0 +1,358 @@
+@charset "UTF-8";
+/*---This part below was in style.css before but it was easier to bring it here for now---*/
+/* line 11, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+body {
+  padding: 0.5em;
+  margin: 0em;
+  background: url(style/bg-light.png); }
+
+/* line 17, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+h1 {
+  font-size: 1em;
+  background: black;
+  color: white;
+  padding: 15px;
+  margin: 15px; }
+
+/* line 26, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+h1 .version {
+  font-style: italic; }
+
+/* line 30, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#status, #infos, #directionToTarget {
+  padding: 15px;
+  /*	margin: 15px;*/
+  background: white;
+  width: 80vw;
+  display: block;
+  margin: 15px auto;
+  box-sizing: border-box; }
+
+/* line 41, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#myMap {
+  border: 10px solid white;
+  margin: 15px auto;
+  /*	height: 300px; */
+  height: 20vh;
+  width: 80vw;
+  box-sizing: border-box; }
+
+/*(temporary)Glitch Style*/
+/* line 54, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#testZone {
+  width: 80vw;
+  padding: 15px;
+  height: 20vh;
+  text-align: center;
+  margin: 35px auto 0px auto;
+  box-sizing: border-box; }
+
+/* line 63, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.clearZone {
+  background: white; }
+
+/* line 67, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched0 {
+  background: cornflowerblue; }
+
+/* line 71, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched1 {
+  background: green; }
+
+/* line 75, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched2 {
+  background: yellow; }
+
+/* line 79, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched3 {
+  background: orange; }
+
+/* line 83, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched4 {
+  background: red; }
+
+/* line 87, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched5 {
+  background: black; }
+
+/*Debug zone style*/
+/* line 93, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.debug {
+  display: box; }
+
+/* line 98, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.debugHidden {
+  visibility: hidden;
+  /*map doesn't load properly if its container is set to display none*/ }
+
+/* line 102, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#debug {
+  text-align: center; }
+
+/*Compass*/
+/* line 108, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#arrowNorth {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 50px solid red;
+  display: inline-block; }
+
+/* line 118, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#arrowTarget {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 50px solid green;
+  display: inline-block; }
+
+/* line 129, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.fauxBorder {
+  /*pas utilisées pour le moment et peut-être jamais en fait... on verra plus tard...*/
+  background: white; }
+
+/* line 134, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#fauxBorderLeft {
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+/* line 142, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#fauxBorderRight {
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+/* line 150, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#fauxBorderUp {
+  height: 20px;
+  width: 100vw;
+  position: absolute;
+  top: 0; }
+
+/* line 159, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#fauxBorderDown {
+  height: 20px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0; }
+
+/* line 167, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.arrow {
+  width: 40%;
+  display: inline-block; }
+
+/* line 172, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#debugButton {
+  margin: 20px auto;
+  display: block; }
+
+/*---end of style.css---*/
+/*Style for glitch effects stolen from Chris Coyier https://css-tricks.com/glitch-effect-text-images-svg/
+*/
+/* line 185, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+#testZone p {
+  font-family: sans-serif;
+  color: white;
+  font-size: 2em;
+  position: relative; }
+
+/* line 202, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched0 p::before,
+.glitched0 p::after {
+  content: "Find the source of the interference";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 213, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched1 p::before,
+.glitched1 p::after {
+  content: "Looks like you're on the right track.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 218, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched2 p::before,
+.glitched2 p::after {
+  content: "You're getting closer (except if you went back...)";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 223, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched3 p::before,
+.glitched3 p::after {
+  content: "I think you figured it out.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 228, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched4 p::before,
+.glitched4 p::after {
+  content: "It's big, I can feel it in my circuits.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 233, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched5 p::before,
+.glitched5 p::after {
+  content: "You found it! aaaand now you're dead... game over.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip: rect(35px, 9999px, 27px, 0); }
+  10% {
+    clip: rect(57px, 9999px, 53px, 0); }
+  20% {
+    clip: rect(95px, 9999px, 27px, 0); }
+  30% {
+    clip: rect(36px, 9999px, 81px, 0); }
+  40% {
+    clip: rect(98px, 9999px, 97px, 0); }
+  50% {
+    clip: rect(71px, 9999px, 69px, 0); }
+  60% {
+    clip: rect(76px, 9999px, 42px, 0); }
+  70% {
+    clip: rect(42px, 9999px, 84px, 0); }
+  80% {
+    clip: rect(53px, 9999px, 72px, 0); }
+  90% {
+    clip: rect(85px, 9999px, 94px, 0); }
+  100% {
+    clip: rect(43px, 9999px, 20px, 0); } }
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(46px, 9999px, 30px, 0); }
+  10% {
+    clip: rect(57px, 9999px, 39px, 0); }
+  20% {
+    clip: rect(2px, 9999px, 64px, 0); }
+  30% {
+    clip: rect(79px, 9999px, 41px, 0); }
+  40% {
+    clip: rect(43px, 9999px, 66px, 0); }
+  50% {
+    clip: rect(58px, 9999px, 12px, 0); }
+  60% {
+    clip: rect(86px, 9999px, 18px, 0); }
+  70% {
+    clip: rect(24px, 9999px, 29px, 0); }
+  80% {
+    clip: rect(62px, 9999px, 17px, 0); }
+  90% {
+    clip: rect(70px, 9999px, 15px, 0); }
+  100% {
+    clip: rect(100px, 9999px, 3px, 0); } }
+
+/* line 263, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched0 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: cornflowerblue;
+  animation: glitch-anim-1 10s infinite linear alternate-reverse; }
+
+/* line 273, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched1 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: green;
+  animation: glitch-anim-1 5s infinite linear alternate-reverse; }
+
+/* line 276, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched2 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: yellow;
+  animation: glitch-anim-1 3s infinite linear alternate-reverse; }
+
+/* line 279, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched3 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: orange;
+  animation: glitch-anim-1 1s infinite linear alternate-reverse; }
+
+/* line 282, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched4 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: red;
+  animation: glitch-anim-1 0.5s infinite linear alternate-reverse; }
+
+/* line 285, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched5 p::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: black;
+  animation: glitch-anim-1 0.1s infinite linear alternate-reverse; }
+
+/* line 296, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched0 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: cornflowerblue;
+  animation: glitch-anim-2 10s infinite linear alternate-reverse; }
+
+/* line 305, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched1 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: green;
+  animation: glitch-anim-2 5s infinite linear alternate-reverse; }
+
+/* line 308, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched2 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: yellow;
+  animation: glitch-anim-2 3s infinite linear alternate-reverse; }
+
+/* line 311, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched3 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: orange;
+  animation: glitch-anim-2 1s infinite linear alternate-reverse; }
+
+/* line 314, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched4 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: red;
+  animation: glitch-anim-2 0.5s infinite linear alternate-reverse; }
+
+/* line 317, /Users/Cedric/Documents/Clients Local/StoryCode/geo-sandbox-js/glitch.scss */
+.glitched5 p::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: black;
+  animation: glitch-anim-2 0.1s infinite linear alternate-reverse; }
+
+/*# sourceMappingURL=glitch.css.map */
